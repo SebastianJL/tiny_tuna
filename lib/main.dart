@@ -11,7 +11,6 @@ import 'package:supercharged/supercharged.dart';
 void main() => runApp(App());
 
 class App extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -113,21 +112,12 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            _listening = !_listening;
-          });
+          setState(() => _listening = !_listening);
         },
         tooltip: 'Listen',
         backgroundColor: _listening ? Colors.red : Colors.blue,
-        child: _listening ? Icon(Icons.stop) : Text('listen'),
+        child: _listening ? Icon(Icons.stop) : Text('Listen'),
       ),
     );
   }
-}
-
-List<T> slice<T>(List<T> list, [int start = 0, int stop = -1, int step = 1]) {
-  stop = stop % list.length;
-  var sliced = <T>[];
-  for (var i = start; i <= stop; i += step) sliced.add(list[i]);
-  return sliced;
 }
