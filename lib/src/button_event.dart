@@ -1,0 +1,4 @@
+enum ButtonEvent {
+  AudioButtonPressed,
+  FrequencyModeButtonPressed,
+}
